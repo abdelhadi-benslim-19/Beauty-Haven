@@ -1,0 +1,30 @@
+/* Custom styles for the secondary navbar */
+.navbar-secondary {
+    background-color: #FFFFFF; /* Same background color as the main navbar */
+    width: 100%;
+}
+
+.navbar-secondary .nav-link {
+    padding: 0.5rem 1rem; /* Adjust padding as needed */
+}
+
+/* Ensure the secondary navbar appears right below the primary navbar in desktop mode */
+@media (min-width: 992px) {
+    .navbar-secondary {
+        margin-top: -1px; /* Slight adjustment to remove any gap between navbars */
+    }
+}
+
+/* Adjust the width and centering of the search bar */
+form.d-flex {
+    max-width: 700px; /* Adjust this width as needed */
+    width: 100%;
+}
+
+form.d-flex input.form-control {
+    flex-grow: 1;
+}
+
+.fas {
+    font-size: 25px;
+}
