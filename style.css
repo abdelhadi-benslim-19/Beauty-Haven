@@ -44,3 +44,8 @@ form.d-flex input.form-control {
 #login-form.d-none, #register-form.d-none {
     display: none;
 }
+
+
+.fa-user, .fa-heart, .fa-shopping-cart {
+    cursor: pointer;
+}

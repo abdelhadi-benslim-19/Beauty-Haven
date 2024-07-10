@@ -29,10 +29,10 @@
                             <a class="nav-link" href="./auth.html"><i class="fas fa-user"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fas fa-heart"></i></a>
+                            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#favoriteModal"><i class="fas fa-heart"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart"><i class="fas fa-shopping-cart"></i></a>
+                            <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart"><i class="fas fa-shopping-cart"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -109,6 +109,24 @@
             </ul>
         </div>
     </nav>
+
+    <!-- Modal -->
+<div class="modal fade" id="favoriteModal" tabindex="-1" aria-labelledby="favoriteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="favoriteModalLabel">Favorite Products</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="favoriteModalBody">
+                <!-- Favorite products will be dynamically added here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
     
 <!-- Offcanvas Cart -->
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasCartLabel">
