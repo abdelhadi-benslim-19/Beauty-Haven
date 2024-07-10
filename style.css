@@ -2,6 +2,7 @@
 .navbar-secondary {
     background-color: #FFFFFF; /* Same background color as the main navbar */
     width: 100%;
+    border-bottom: 2px solid lightgray; /* Set the bottom border */
 }
 
 .navbar-secondary .nav-link {
@@ -27,4 +28,19 @@ form.d-flex input.form-control {
 
 .fas {
     font-size: 25px;
+}
+
+
+/* Custom styles for the auth forms */
+#auth-container {
+    transition: transform 0.3s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+#login-form, #register-form {
+    backface-visibility: hidden;
+}
+
+#login-form.d-none, #register-form.d-none {
+    display: none;
 }
