@@ -8,40 +8,255 @@
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- Custom styles for the soft pink theme -->
+    <style>
+        /* Soft pink theme colors */
+        :root {
+            --main-color: #F8BBD0; /* Main pink color */
+            --accent-color-1: #DAA06A;
+            --accent-color-2: #D08E54;
+            --accent-color-3: #B2515B;
+            --accent-color-4: #473654;
+        }
+        
+        /* Custom styles for the brands page */
+        body {
+            background-color: #fff; /* Adjust as needed */
+            color: #333; /* Adjust text color */
+        }
+
+        .navbar {
+            background-color: var(--main-color);
+        }
+
+        .brands {
+            padding: 4rem 0;
+        }
+
+        .brand-card {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #fff;
+            box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .brand-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .brand-logo {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
 <body>
     <div id="navbar-container"></div>
 
-    <div class="container py-5">
-        <h2 class="mb-4">Brands</h2>
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="Brand 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Brand 1</h5>
-                        <p class="card-text">Description of Brand 1.</p>
-                        <a href="#" class="btn btn-primary">Explore</a>
+    <!-- Brands Section -->
+    <section class="brands">
+        <div class="container">
+            <h2 class="text-center mb-4">Our Brands</h2>
+            <div class="row row-cols-2 row-cols-md-4 g-4 text-center">
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="https://www.globalcosmeticsnews.com/wp-content/uploads/2022/09/loreal-600-x-300-1080x675.jpeg" class="card-img-top brand-logo" alt="Brand 1">
+                   
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="Brand 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Brand 2</h5>
-                        <p class="card-text">Description of Brand 2.</p>
-                        <a href="#" class="btn btn-primary">Explore</a>
+                <!-- Repeat for 29 more brands -->
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="https://logos-world.net/wp-content/uploads/2020/12/Maybelline-Emblem.png" class="card-img-top brand-logo" alt="Brand 2">
+                    
                     </div>
                 </div>
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="https://1000logos.net/wp-content/uploads/2021/04/MAC-Cosmetics-logo.png" class="card-img-top brand-logo" alt="Brand 3">
+                     
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/NARS_Cosmetics_logo.png" class="card-img-top brand-logo" alt="Brand 4">
+                     
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="https://1000logos.net/wp-content/uploads/2020/07/Urban-Decay-Logo.png" class="card-img-top brand-logo" alt="Brand 5">
+   
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="https://www.globalcosmeticsnews.com/wp-content/uploads/2022/09/estee-lauder-600-x-300-1080x675.jpeg" class="card-img-top brand-logo" alt="Brand 6">
+                   
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Clinique_logo.svg" class="card-img-top brand-logo" alt="Brand 7">
+                      
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Benefit_Cosmetics_logo.png" class="card-img-top brand-logo" alt="Brand 8">
+                      
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="https://1000logos.net/wp-content/uploads/2020/07/TooFaced-Logo.png" class="card-img-top brand-logo" alt="Brand 9">
+                      
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="https://i.pinimg.com/originals/e5/13/d0/e513d01919c96a783c19971db7e3a862.png" class="card-img-top brand-logo" alt="Brand 10">
+                  
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="https://1000logos.net/wp-content/uploads/2020/10/Anastasia-Beverly-Hills-logo.jpg" class="card-img-top brand-logo" alt="Brand 11">
+                       
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="https://seeklogo.com/images/T/tarte-logo-A59513C3C1-seeklogo.com.png" class="card-img-top brand-logo" alt="Brand 12">
+                
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="https://photos.prnewswire.com/prnfull/20151116/287586LOGO" class="card-img-top brand-logo" alt="Brand 13">
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="data:image/png;base64,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" class="card-img-top brand-logo" alt="Brand 14">
+              
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="https://logowik.com/content/uploads/images/fenty-beauty9929.logowik.com.webp" class="card-img-top brand-logo" alt="Brand 15">
+         
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="https://colourpop.com/cdn/shop/files/logo.webp?height=628&pad_color=fff&v=1661994833&width=1200" class="card-img-top brand-logo" alt="Brand 16">
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Jeffree_Star_Cosmetics_Logo.png" class="card-img-top brand-logo" alt="Brand 17">
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="https://allvectorlogo.com/img/2017/09/bobbi-brown-logo.png" class="card-img-top brand-logo" alt="Brand 18">
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="https://www.sephora.com.kw/on/demandware.static/-/Library-Sites-SephoraV2/default/dwf02f76d3/brands/Logos/LAURA_MERCIER_300_150_logo.jpg" class="card-img-top brand-logo" alt="Brand 19">
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="https://logowik.com/content/uploads/images/kylie-cosmetics6327.logowik.com.webp" class="card-img-top brand-logo" alt="Brand 20">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/OPI_logo.jpg" class="card-img-top brand-logo" alt="Brand 21">
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Essie_logo.png" class="card-img-top brand-logo" alt="Brand 22">
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="https://www.sephora.bh/on/demandware.static/-/Library-Sites-SephoraV2/default/dwbaaff5d9/brands/Brand_Page/SEPHORA_COLLECTION/Sephora-Collection-Logo-300x150.png" class="card-img-top brand-logo" alt="Brand 23">
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c6/NYX_Professional_Makeup_Logo.jpeg" class="card-img-top brand-logo" alt="Brand 24">
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="https://logos-world.net/wp-content/uploads/2023/01/Covergirl-Logo.png" class="card-img-top brand-logo" alt="Brand 25">
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Revlon_logo.svg/2560px-Revlon_logo.svg.png" class="card-img-top brand-logo" alt="Brand 26">
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="https://www.globalcosmeticsnews.com/wp-content/uploads/2022/09/chanel-600-x-300-1080x675.jpeg" class="card-img-top brand-logo" alt="Brand 27">
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Dior_Logo.svg/2560px-Dior_Logo.svg.png" class="card-img-top brand-logo" alt="Brand 28">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="https://static.vecteezy.com/system/resources/previews/024/131/259/original/ysl-yves-saint-laurent-brand-logo-symbol-clothes-design-icon-abstract-illustration-free-vector.jpg" class="card-img-top brand-logo" alt="Brand 29">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="https://seeklogo.com/images/G/gucci-beauty-logo-F76F462374-seeklogo.com.png" class="card-img-top brand-logo" alt="Brand 30">
+                    </div>
+                </div>
+                <!-- Add more brands here -->
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="https://www.globalcosmeticsnews.com/wp-content/uploads/2022/09/unilever-600-x-300-1080x675.jpeg" class="card-img-top brand-logo" alt="Brand 31">
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="card h-100 brand-card">
+                        <img src="https://1000logos.net/wp-content/uploads/2020/07/Bath-Body-Works-Logo.jpg" class="card-img-top brand-logo" alt="Brand 32">
+                    </div>
+                </div>
+                
             </div>
-            <!-- Add more brands as needed -->
         </div>
-    </div>
+    </section>
 
     <div id="footer-container"></div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS and Custom Script -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script src="script.js"></script>

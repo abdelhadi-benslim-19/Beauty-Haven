@@ -1,51 +1,128 @@
-/* Custom styles for the secondary navbar */
-.navbar-secondary {
-    background-color: #FFFFFF; /* Same background color as the main navbar */
-    width: 100%;
-    border-bottom: 2px solid lightgray; /* Set the bottom border */
+/* Custom styles for the new color palette */
+:root {
+    --main-color: #F8BBD0; /* Main color */
+    --accent1: #DAA06A; /* Accent color 1 */
+    --accent2: #D08E54; /* Accent color 2 */
+    --accent3: #B2515B; /* Accent color 3 */
+    --accent4: #473654; /* Accent color 4 */
 }
 
-.navbar-secondary .nav-link {
-    padding: 0.5rem 1rem; /* Adjust padding as needed */
+body {
+    background-color: var(--main-color);
+    color: #333;
 }
 
-/* Ensure the secondary navbar appears right below the primary navbar in desktop mode */
-@media (min-width: 992px) {
-    .navbar-secondary {
-        margin-top: -1px; /* Slight adjustment to remove any gap between navbars */
-    }
+.navbar, .navbar-secondary {
+    background-color: var(--main-color);
 }
 
-/* Adjust the width and centering of the search bar */
-form.d-flex {
-    max-width: 700px; /* Adjust this width as needed */
-    width: 100%;
+.navbar .nav-link, .navbar-secondary .nav-link {
+    color: #fff;
 }
 
-form.d-flex input.form-control {
-    flex-grow: 1;
+.navbar .nav-link:hover, .navbar-secondary .nav-link:hover {
+    color: var(--accent1);
 }
 
-.fas {
-    font-size: 25px;
+.btn-primary {
+    background-color: var(--accent1);
+    border-color: var(--accent1);
 }
 
+.btn-primary:hover {
+    background-color: var(--accent2);
+    border-color: var(--accent2);
+}
 
-/* Custom styles for the auth forms */
-#auth-container {
+.hero {
+    background-color: var(--main-color);
+}
+
+.featured-products .card {
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.featured-products .card:hover {
+    transform: scale(1.05);
+}
+
+.promotions .promo-card {
+    background-color: var(--accent3);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.promotions .promo-card a {
+    color: #fff;
+    background-color: var(--accent4);
+}
+
+.promotions .promo-card a:hover {
+    background-color: #fff;
+    color: var(--accent4);
+}
+
+.categories .category-card {
+    border: none;
+    border-radius: 10px;
+    background-color: var(--accent2);
+    color: #000000;
+}
+
+.categories .category-card a {
+    color: var(--accent4);
+}
+
+.categories .category-card a:hover {
+    color: #fff;
+    background-color: var(--accent4);
+}
+
+.testimonials .testimonial-card {
+    background-color: var(--accent1);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+}
+
+.newsletter {
+    background-color: var(--accent3);
+}
+
+.newsletter input {
+    border: 1px solid var(--accent4);
+}
+
+.newsletter button {
+    background-color: var(--accent4);
+    border: none;
+}
+
+.newsletter button:hover {
+    background-color: var(--accent2);
+}
+
+.brands {
+    padding: 4rem 0;
+}
+
+.brand-card {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #fff;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
-    transform-style: preserve-3d;
 }
 
-#login-form, #register-form {
-    backface-visibility: hidden;
+.brand-card:hover {
+    transform: translateY(-5px);
 }
 
-#login-form.d-none, #register-form.d-none {
-    display: none;
-}
-
-
-.fa-user, .fa-heart, .fa-shopping-cart {
-    cursor: pointer;
+.brand-logo {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
 }
