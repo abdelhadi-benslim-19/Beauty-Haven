@@ -16,6 +16,10 @@ body {
     background-color: var(--main-color);
 }
 
+.navbar-secondary {
+    border-bottom: 1px solid var(--accent1);
+}
+
 .navbar .nav-link, .navbar-secondary .nav-link {
     color: #fff;
 }
@@ -133,8 +137,8 @@ body {
 }
 
 .hero-section {
-    background-color: #F8BBD0;
-    color: #fff;
+    background-color: #F8F9FA;
+    color: #000;
     padding: 100px 0;
     text-align: center;
 }

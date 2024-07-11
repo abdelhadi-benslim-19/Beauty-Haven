@@ -39,12 +39,16 @@ $(document).ready(function() {
         }
     }
 
-    // Initial product data (replace with your actual product data)
-    productsData = [
-        { name: 'Product 1', price: 19.99, brand: 'Brand 1', type: 'Type 1', image: 'https://via.placeholder.com/300' },
-        { name: 'Product 2', price: 24.99, brand: 'Brand 2', type: 'Type 2', image: 'https://via.placeholder.com/300' },
-        // Add more products as needed
-    ];
+    // Initial product data (generating 32 products with random values)
+    for (var i = 1; i <= 32; i++) {
+        productsData.push({
+            name: 'Makeup Product ' + i,
+            price: (Math.floor(Math.random() * 100) + 10),
+            brand: 'Brand ' + (Math.floor(Math.random() * 3) + 1), // Random brand from 1 to 3
+            type: 'Type ' + (Math.floor(Math.random() * 3) + 1), // Random type from 1 to 3
+            image: 'https://via.placeholder.com/300'
+        });
+    }
 
     // Generate initial product cards
     generateProducts(productsData);
