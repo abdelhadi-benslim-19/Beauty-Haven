@@ -22,24 +22,72 @@
     <!-- End Hero Section -->
 
     <div class="container py-5">
-        <h2 class="mb-4">Featured Products</h2>
-        <div id="makeupCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <!-- Makeup Product Cards -->
-                <div class="carousel-item active">
-                    <div class="row">
-                        <!-- Generated Makeup Products -->
-                        <!-- Insert generated products here -->
-                        <!-- Example: -->
-
-                        <!-- End Generated Makeup Products -->
-                        <!-- Repeat for additional products -->
-                        <!-- Make sure to generate 32 products -->
+        <div class="row">
+            <!-- Filter Sidebar -->
+            <div class="col-lg-3">
+                <div class="card mb-4">
+                    <h5 class="card-header">Filters</h5>
+                    <div class="card-body">
+                        <!-- Filter by Price Range -->
+                        <div class="mb-3">
+                            <h6>Price Range</h6>
+                            <input type="range" class="form-range" id="priceRange" min="0" max="100" step="10" value="0">
+                            <span id="priceValue">$0 - $100</span>
+                        </div>
+                        
+                        <!-- Filter by Brand -->
+                        <div class="mb-3">
+                            <h6>Brand</h6>
+                            <select class="form-select" id="brandFilter">
+                                <option value="all">All Brands</option>
+                                <option value="brand1">Brand 1</option>
+                                <option value="brand2">Brand 2</option>
+                                <!-- Add more brands as needed -->
+                            </select>
+                        </div>
+                        
+                        <!-- Filter by Type -->
+                        <div class="mb-3">
+                            <h6>Type</h6>
+                            <div>
+                                <input type="checkbox" id="type1" class="form-check-input type-filter" value="type1">
+                                <label for="type1" class="form-check-label">Type 1</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="type2" class="form-check-input type-filter" value="type2">
+                                <label for="type2" class="form-check-label">Type 2</label>
+                            </div>
+                            <!-- Add more types as needed -->
+                        </div>
+                        
+                        <!-- Apply Filter Button -->
+                        <button class="btn btn-primary" id="applyFilterBtn">Apply Filters</button>
                     </div>
                 </div>
-                <!-- End Makeup Product Cards -->
             </div>
+            <!-- End Filter Sidebar -->
 
+            <!-- Makeup Products Carousel -->
+            <div class="col-lg-9">
+                <div id="makeupCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <!-- Makeup Product Cards -->
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <!-- Generated Makeup Products -->
+                                <!-- Insert generated products here -->
+                                <!-- Example: -->
+
+                                <!-- End Generated Makeup Products -->
+                                <!-- Repeat for additional products -->
+                                <!-- Make sure to generate 32 products -->
+                            </div>
+                        </div>
+                        <!-- End Makeup Product Cards -->
+                    </div>
+                </div>
+            </div>
+            <!-- End Makeup Products Carousel -->
         </div>
     </div>
 
