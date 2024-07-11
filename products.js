@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var productsData = []; // Replace with your product data array
+    var productsData = []; // Replace with your actual product data array
 
     // Function to generate product cards
     function generateProducts(products) {
@@ -33,7 +33,7 @@ $(document).ready(function() {
 
             // Insert products every productsPerRow items
             if ((i + 1) % productsPerRow === 0 || (i + 1) === products.length) {
-                $('#makeupCarousel .carousel-item.active .row').append(productsHtml);
+                $('#productsCarousel .carousel-item.active .row').append(productsHtml);
                 productsHtml = ''; // Reset productsHtml for next row
             }
         }
@@ -42,7 +42,7 @@ $(document).ready(function() {
     // Initial product data (generating 32 products with random values)
     for (var i = 1; i <= 32; i++) {
         productsData.push({
-            name: 'Makeup Product ' + i,
+            name: 'Product ' + i,
             price: (Math.floor(Math.random() * 100) + 10),
             brand: 'Brand ' + (Math.floor(Math.random() * 3) + 1), // Random brand from 1 to 3
             type: 'Type ' + (Math.floor(Math.random() * 3) + 1), // Random type from 1 to 3
@@ -63,14 +63,12 @@ $(document).ready(function() {
     // Handle add to favorites button click
     $(document).on('click', '.btn-favorite', function(e) {
         e.preventDefault();
-        // Add your favorite handling logic here
         console.log('Added to favorites');
     });
 
     // Handle add to cart button click
     $(document).on('click', '.btn-add-to-cart', function(e) {
         e.preventDefault();
-        // Add your add to cart handling logic here
         console.log('Added to cart');
     });
 
@@ -115,7 +113,7 @@ $(document).ready(function() {
         });
 
         // Clear current products
-        $('#makeupCarousel .carousel-item.active .row').empty();
+        $('#productsCarousel .carousel-item.active .row').empty();
 
         // Generate filtered products
         generateProducts(filteredProducts);

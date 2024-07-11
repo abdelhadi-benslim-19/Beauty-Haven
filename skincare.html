@@ -3,91 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Makeup - Beauty Haven</title>
+    <title>Skincare - Beauty Haven</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-category="skincare">
     <div id="navbar-container"></div>
 
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
-            <h1>Explore Skincare Essentials</h1>
-            <p>Discover our range of skincare products to keep your skin healthy and glowing</p>
+            <h1>Skincare Essentials!</h1>
+            <p>Discover our premium skincare products and enjoy glowing skin!</p>
         </div>
     </section>
     <!-- End Hero Section -->
 
     <div class="container py-5">
         <div class="row">
-            <!-- Filter Sidebar -->
-            <div class="col-lg-3">
-                <div class="card mb-4">
-                    <h5 class="card-header">Filters</h5>
-                    <div class="card-body">
-                        <!-- Filter by Price Range -->
-                        <div class="mb-3">
-                            <h6>Price Range</h6>
-                            <input type="range" class="form-range" id="priceRange" min="0" max="100" step="10" value="0">
-                            <span id="priceValue">$0 - $100</span>
-                        </div>
-                        
-                        <!-- Filter by Brand -->
-                        <div class="mb-3">
-                            <h6>Brand</h6>
-                            <select class="form-select" id="brandFilter">
-                                <option value="all">All Brands</option>
-                                <option value="brand1">Brand 1</option>
-                                <option value="brand2">Brand 2</option>
-                                <!-- Add more brands as needed -->
-                            </select>
-                        </div>
-                        
-                        <!-- Filter by Type -->
-                        <div class="mb-3">
-                            <h6>Type</h6>
-                            <div>
-                                <input type="checkbox" id="type1" class="form-check-input type-filter" value="type1">
-                                <label for="type1" class="form-check-label">Type 1</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="type2" class="form-check-input type-filter" value="type2">
-                                <label for="type2" class="form-check-label">Type 2</label>
-                            </div>
-                            <!-- Add more types as needed -->
-                        </div>
-                        
-                        <!-- Apply Filter Button -->
-                        <button class="btn btn-primary" id="applyFilterBtn">Apply Filters</button>
+            <div class="col-md-3">
+                <!-- Filter Sidebar -->
+                <div class="filter-sidebar">
+                    <h4>Filter by:</h4>
+                    <!-- Price Range Filter -->
+                    <div class="mb-3">
+                        <label for="priceRange" class="form-label">Price Range</label>
+                        <input type="range" class="form-range" id="priceRange" min="0" max="100" value="100">
+                        <p id="priceValue">$0 - $100</p>
                     </div>
+
+                    <!-- Brand Filter -->
+                    <div class="mb-3">
+                        <label for="brandFilter" class="form-label">Brand</label>
+                        <select class="form-select" id="brandFilter">
+                            <option value="all">All Brands</option>
+                            <option value="Brand 1">Brand 1</option>
+                            <option value="Brand 2">Brand 2</option>
+                            <option value="Brand 3">Brand 3</option>
+                        </select>
+                    </div>
+
+                    <!-- Type Filter -->
+                    <div class="mb-3">
+                        <label class="form-label">Type</label>
+                        <div class="form-check">
+                            <input class="form-check-input type-filter" type="checkbox" value="Type 1" id="type1">
+                            <label class="form-check-label" for="type1">Type 1</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input type-filter" type="checkbox" value="Type 2" id="type2">
+                            <label class="form-check-label" for="type2">Type 2</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input type-filter" type="checkbox" value="Type 3" id="type3">
+                            <label class="form-check-label" for="type3">Type 3</label>
+                        </div>
+                    </div>
+
+                    <!-- Apply Filters Button -->
+                    <button class="btn btn-primary" id="applyFilterBtn">Apply Filters</button>
                 </div>
             </div>
-            <!-- End Filter Sidebar -->
 
-            <!-- Makeup Products Carousel -->
-            <div class="col-lg-9">
-                <div id="makeupCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="col-md-9">
+                <div id="productsCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
-                        <!-- Makeup Product Cards -->
+                        <!-- Skincare Product Cards -->
                         <div class="carousel-item active">
                             <div class="row">
-                                <!-- Generated Makeup Products -->
+                                <!-- Generated Skincare Products -->
                                 <!-- Insert generated products here -->
-                                <!-- Example: -->
-
-                                <!-- End Generated Makeup Products -->
-                                <!-- Repeat for additional products -->
-                                <!-- Make sure to generate 32 products -->
                             </div>
                         </div>
-                        <!-- End Makeup Product Cards -->
+                        <!-- End Skincare Product Cards -->
                     </div>
                 </div>
             </div>
-            <!-- End Makeup Products Carousel -->
         </div>
     </div>
 

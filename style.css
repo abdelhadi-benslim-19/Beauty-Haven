@@ -159,3 +159,10 @@ body {
 .btn-view-details {
     z-index: 1;
 }
+
+.filter-sidebar {
+    background-color: var(--accent3);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
