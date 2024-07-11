@@ -61,3 +61,4 @@ function displayFavoriteProductsModal() {
 document.getElementById('favoriteModal').addEventListener('shown.bs.modal', function () {
     displayFavoriteProductsModal();
 });
+
