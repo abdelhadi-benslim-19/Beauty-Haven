@@ -146,6 +146,12 @@ body {
     font-size: 1.5rem;
     margin-bottom: 30px;
 }
+
 .product-card {
-    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-view-details {
+    z-index: 1;
 }
