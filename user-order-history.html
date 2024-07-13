@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Dashboard - Beauty Haven</title>
+    <title>Order History - Beauty Haven</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css"> <!-- You can link your custom stylesheet here -->
@@ -15,11 +15,11 @@
         <div class="row">
             <div class="col-md-3 mb-4">
                 <div class="list-group">
-                    <a href="./user-dashboard.html" class="list-group-item list-group-item-action active" aria-current="true">
+                    <a href="./user-dashboard.html" class="list-group-item list-group-item-action">
                         Dashboard
                     </a>
                     <a href="./user-profile-settings.html" class="list-group-item list-group-item-action">Profile Settings</a>
-                    <a href="./user-order-history.html" class="list-group-item list-group-item-action">Order History</a>
+                    <a href="./user-order-history.html" class="list-group-item list-group-item-action active" aria-current="true">Order History</a>
                     <a href="./user-payment-methods.html" class="list-group-item list-group-item-action">Payment Methods</a>
                     <a href="./user-change-password.html" class="list-group-item list-group-item-action">Change Password</a>
                     <a href="#" class="list-group-item list-group-item-action">Logout</a>
@@ -28,8 +28,19 @@
             <div class="col-md-9">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Welcome to Your Dashboard</h5>
-                        <p class="card-text">Here you can manage your account settings and view your order history.</p>
+                        <h5 class="card-title">Order History</h5>
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action">
+                                Order #001 - July 12, 2024
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                Order #002 - July 10, 2024
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                Order #003 - July 8, 2024
+                            </a>
+                            <!-- Add more order items dynamically -->
+                        </div>
                     </div>
                 </div>
             </div>
