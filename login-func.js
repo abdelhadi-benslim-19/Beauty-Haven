@@ -1,7 +1,6 @@
-// Function to handle form submission
 $(document).ready(function() {
     // Handle login form submission
-    $('#loginForm').submit(function(event) {
+    $('#login-form form').submit(function(event) {
         event.preventDefault(); // Prevent default form submission
 
         // Retrieve input values
