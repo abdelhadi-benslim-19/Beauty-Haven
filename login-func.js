@@ -5,9 +5,9 @@ $(document).ready(function() {
         var password = $("#loginPassword").val();
 
         // Check the login credentials
-        if (email === "seller@example.com" && password === "seller123") {
+        if (email === "danielpark@example.com" && password === "danielpark123") {
             window.location.href = "seller-dashboard.html";
-        } else if (email === "consumer@example.com" && password === "consumer123") {
+        } else if (email === "jameslee@example.com" && password === "jameslee123") {
             window.location.href = "user-dashboard.html";
         } else {
             alert("Invalid email or password.");
