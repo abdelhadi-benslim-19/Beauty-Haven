@@ -12,20 +12,7 @@ fetch('footer.html')
         document.getElementById('footer-container').innerHTML = data;
     });
 
-// swapping effect for login and register forms
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('show-register').addEventListener('click', function(e) {
-        e.preventDefault();
-        document.getElementById('login-form').classList.add('d-none');
-        document.getElementById('register-form').classList.remove('d-none');
-    });
 
-    document.getElementById('show-login').addEventListener('click', function(e) {
-        e.preventDefault();
-        document.getElementById('login-form').classList.remove('d-none');
-        document.getElementById('register-form').classList.add('d-none');
-    });
-});
 
 // Function to display favorite products in the modal
 function displayFavoriteProductsModal() {
