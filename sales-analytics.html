@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard - Beauty Haven</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <!-- You can link your custom stylesheet here -->
+    <!-- Chart.js library for charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="navbar-container"></div>
+
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-3 mb-4">
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                        Dashboard
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">Manage Products</a>
+                    <a href="#" class="list-group-item list-group-item-action">Orders</a>
+                    <a href="#" class="list-group-item list-group-item-action">Sales Analytics</a>
+                    <a href="#" class="list-group-item list-group-item-action">Settings</a>
+                    <a href="#" class="list-group-item list-group-item-action">Logout</a>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Sales Analytics</h5>
+                        <canvas id="salesChart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+                <!-- Example chart data -->
+                <script>
+                    // Sample data for demonstration
+                    const salesData = {
+                        labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+                        datasets: [{
+                            label: 'Monthly Sales',
+                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 1,
+                            data: [1000, 1500, 1200, 1800, 1300, 2000],
+                        }]
+                    };
+
+                    // Initialize Chart.js
+                    const ctx = document.getElementById('salesChart').getContext('2d');
+                    const salesChart = new Chart(ctx, {
+                        type: 'line',
+                        data: salesData,
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
