@@ -71,6 +71,7 @@ $(document).ready(function() {
             favoriteHtml += '<div class="card-body">';
             favoriteHtml += '<h5 class="card-title">' + product.name + '</h5>';
             favoriteHtml += '<p class="card-text">$' + product.price.toFixed(2) + '</p>';
+            favoriteHtml += '<button class="btn btn-danger btn-remove-from-favorites" data-product-name="' + product.name + '">Remove</button>'; // Remove button
             favoriteHtml += '</div>';
             favoriteHtml += '</div>';
             favoriteHtml += '</div>';
@@ -160,6 +161,28 @@ $(document).ready(function() {
         console.log('Favorites updated:', favorites);
 
         // Update favorite modal
+        generateFavoriteProducts();
+    });
+
+    // Handle remove from favorites button click in favorite modal
+    $(document).on('click', '.btn-remove-from-favorites', function(e) {
+        e.preventDefault();
+        var productName = $(this).data('product-name');
+
+        // Load favorites from local storage
+        var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+        // Remove the product from favorites array
+        var index = favorites.indexOf(productName);
+        if (index !== -1) {
+            favorites.splice(index, 1);
+        }
+
+        // Update local storage
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+        console.log('Favorites updated:', favorites);
+
+        // Regenerate favorite products in the modal
         generateFavoriteProducts();
     });
 
