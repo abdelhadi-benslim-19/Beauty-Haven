@@ -82,36 +82,39 @@ $(document).ready(function() {
         $('#favoriteModalBody').html(favoriteHtml);
     }
 
-    // Function to update cart items display
-    function updateCartDisplay() {
-        var cart = JSON.parse(localStorage.getItem('cart')) || [];
-        var cartHtml = '';
+// Function to update cart items display
+function updateCartDisplay() {
+    var cart = JSON.parse(localStorage.getItem('cart')) || [];
+    var cartHtml = '';
 
-        if (cart.length === 0) {
-            cartHtml = '<p>Your cart is currently empty.</p>';
-        } else {
-            cartHtml = '<div class="list-group">';
-            cart.forEach(function(item, index) {
-                cartHtml += '<div class="list-group-item">';
-                cartHtml += '<div class="row align-items-center">';
-                cartHtml += '<div class="col-2">';
-                cartHtml += '<img src="' + item.image + '" alt="' + item.name + '" class="img-fluid">';
-                cartHtml += '</div>';
-                cartHtml += '<div class="col-7">';
-                cartHtml += '<h6 class="mb-0">' + item.name + '</h6>';
-                cartHtml += '<p class="mb-0">$' + item.price.toFixed(2) + '</p>';
-                cartHtml += '</div>';
-                cartHtml += '<div class="col-3 text-end">';
-                cartHtml += '<button class="btn btn-sm btn-danger btn-remove-from-cart" data-cart-index="' + index + '">&times;</button>';
-                cartHtml += '</div>';
-                cartHtml += '</div>';
-                cartHtml += '</div>';
-            });
+    if (cart.length === 0) {
+        cartHtml = '<p>Your cart is currently empty.</p>';
+    } else {
+        cartHtml = '<div class="list-group">';
+        cart.forEach(function(item, index) {
+            cartHtml += '<div class="list-group-item">';
+            cartHtml += '<div class="row align-items-center">';
+            cartHtml += '<div class="col-2">';
+            cartHtml += '<img src="' + item.image + '" alt="' + item.name + '" class="img-fluid">';
             cartHtml += '</div>';
-        }
-
-        $('#offcanvasCart .offcanvas-body').html(cartHtml);
+            cartHtml += '<div class="col-5">';
+            cartHtml += '<h6 class="mb-0">' + item.name + '</h6>';
+            cartHtml += '<p class="mb-0">$' + item.price.toFixed(2) + '</p>';
+            cartHtml += '</div>';
+            cartHtml += '<div class="col-3 text-end">';
+            cartHtml += '<button class="btn btn-sm btn-danger btn-remove-from-cart" data-cart-index="' + index + '">&times;</button>';
+            cartHtml += '</div>';
+            cartHtml += '<div class="col-2">';
+            cartHtml += '<span class="badge bg-primary">' + item.quantity + '</span>';
+            cartHtml += '</div>';
+            cartHtml += '</div>';
+            cartHtml += '</div>';
+        });
+        cartHtml += '</div>';
     }
+
+    $('#offcanvasCart .offcanvas-body').html(cartHtml);
+}
 
     // Initial product data (generating 32 products with random values)
     for (var i = 1; i <= 32; i++) {
@@ -185,40 +188,37 @@ $(document).ready(function() {
         generateFavoriteProducts();
     });
 
-    // Handle add to cart button click
-    $(document).on('click', '.btn-add-to-cart', function(e) {
-        e.preventDefault();
-        var productName = $(this).data('product-name');
-        var product = productsData.find(function(item) {
-            return item.name === productName;
-        });
-
-        // Load cart items from local storage
-        var cart = JSON.parse(localStorage.getItem('cart')) || [];
-        var cartItem = cart.find(function(item) {
-            return item.name === productName;
-        });
-
-        if (cartItem) {
-            // Increase quantity if already in cart
-            cartItem.quantity = cartItem.quantity + 1 || 2;
-        } else {
-            // Add new item to cart
-            cart.push({
-                name: product.name,
-                price: product.price,
-                image: product.image,
-                quantity: 1
-            });
-        }
-
-        // Update local storage
-        localStorage.setItem('cart', JSON.stringify(cart));
-        console.log('Cart updated:', cart);
-
-        // Update cart display
-        updateCartDisplay();
+// Handle add to cart button click
+$(document).on('click', '.btn-add-to-cart', function(e) {
+    e.preventDefault();
+    var productElement = $(this).closest('.product-card');
+    var productName = productElement.find('.card-title').text();
+    var product = productsData.find(function(item) {
+        return item.name === productName;
     });
+
+    // Load cart items from local storage
+    var cart = JSON.parse(localStorage.getItem('cart')) || [];
+    var cartItem = cart.find(function(item) {
+        return item.name === productName;
+    });
+
+    if (cartItem) {
+        // Increment quantity if product already exists in cart
+        cartItem.quantity += 1;
+    } else {
+        // Add new item to cart with quantity 1
+        product.quantity = 1;
+        cart.push(product);
+    }
+
+    // Update local storage
+    localStorage.setItem('cart', JSON.stringify(cart));
+    console.log('Cart updated:', cart);
+
+    // Update cart display
+    updateCartDisplay();
+});
 
     // Handle remove from cart button click
     $(document).on('click', '.btn-remove-from-cart', function(e) {
