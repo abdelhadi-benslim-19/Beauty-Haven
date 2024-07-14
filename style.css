@@ -189,3 +189,8 @@ body {
 .favorite-product .card-text {
     font-size: 0.8rem; /* Adjust text font size as needed */
 }
+
+#favoriteModalBody {
+    max-height: 400px; /* Adjust the max-height as per your design */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
