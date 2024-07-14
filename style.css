@@ -166,3 +166,26 @@ body {
     border-radius: 5px;
     margin-bottom: 20px;
 }
+
+/* Styles for favorite products */
+.favorite-product {
+    width: 100px; /* Adjust width as needed */
+    font-size: 0.8rem; /* Adjust font size as needed */
+}
+
+.favorite-product img {
+    height: 100px; /* Adjust height as needed */
+    object-fit: cover;
+}
+
+.favorite-product .card-body {
+    padding: 0.5rem; /* Adjust padding as needed */
+}
+
+.favorite-product .card-title {
+    font-size: 0.9rem; /* Adjust title font size as needed */
+}
+
+.favorite-product .card-text {
+    font-size: 0.8rem; /* Adjust text font size as needed */
+}
