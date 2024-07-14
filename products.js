@@ -14,9 +14,10 @@ $(document).ready(function() {
         for (var i = 0; i < products.length; i++) {
             var product = products[i];
             var isFavorite = favorites.includes(product.name); // Check if the product is in favorites
-            var isInCart = cart.some(function(cartItem) {
-                return cartItem.name === product.name;
-            }); // Check if the product is in cart
+            var cartItem = cart.find(function(item) {
+                return item.name === product.name;
+            });
+            var quantityInCart = cartItem ? cartItem.quantity : 0;
 
             productsHtml += '<div class="col-md-4 mb-4">';
             productsHtml += '<div class="card product-card position-relative">';
@@ -34,13 +35,13 @@ $(document).ready(function() {
             productsHtml += '<p class="card-text">$' + product.price.toFixed(2) + '</p>'; // Display price with 2 decimals
 
             // Add to cart button centered
-            if (isInCart) {
+            if (quantityInCart > 0) {
                 productsHtml += '<div class="text-center">';
-                productsHtml += '<button class="btn btn-success btn-add-to-cart" disabled>In Cart</button>';
+                productsHtml += '<button class="btn btn-success btn-add-to-cart" data-product-name="' + product.name + '">Add to Cart (' + quantityInCart + ')</button>';
                 productsHtml += '</div>';
             } else {
                 productsHtml += '<div class="text-center">';
-                productsHtml += '<a href="#" class="btn btn-primary btn-add-to-cart">Add to Cart</a>';
+                productsHtml += '<a href="#" class="btn btn-primary btn-add-to-cart" data-product-name="' + product.name + '">Add to Cart</a>';
                 productsHtml += '</div>';
             }
 
@@ -62,7 +63,7 @@ $(document).ready(function() {
         var favoriteProducts = productsData.filter(function(product) {
             return favorites.includes(product.name);
         });
-    
+
         var favoriteHtml = '<div class="row">';
         favoriteProducts.forEach(function(product) {
             favoriteHtml += '<div class="col-4 mb-2">'; // Use col-4 for 3 products per row, adjust as needed
@@ -71,16 +72,16 @@ $(document).ready(function() {
             favoriteHtml += '<div class="card-body">';
             favoriteHtml += '<h5 class="card-title">' + product.name + '</h5>';
             favoriteHtml += '<p class="card-text">$' + product.price.toFixed(2) + '</p>';
-            favoriteHtml += '<button class="btn btn-danger btn-remove-from-favorites" data-product-name="' + product.name + '">Remove</button>'; // Remove button
+            favoriteHtml += '<button class="btn btn-danger btn-remove-from-favorites" data-product-name="' + product.name + '">Remove</button>'; // Add remove button
             favoriteHtml += '</div>';
             favoriteHtml += '</div>';
             favoriteHtml += '</div>';
         });
         favoriteHtml += '</div>';
-    
+
         $('#favoriteModalBody').html(favoriteHtml);
     }
-    
+
     // Function to update cart items display
     function updateCartDisplay() {
         var cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -164,17 +165,15 @@ $(document).ready(function() {
         generateFavoriteProducts();
     });
 
-    // Handle remove from favorites button click in favorite modal
+    // Handle remove from favorites button click
     $(document).on('click', '.btn-remove-from-favorites', function(e) {
         e.preventDefault();
         var productName = $(this).data('product-name');
-
-        // Load favorites from local storage
         var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
-        // Remove the product from favorites array
+        // Remove from favorites
         var index = favorites.indexOf(productName);
-        if (index !== -1) {
+        if (index > -1) {
             favorites.splice(index, 1);
         }
 
@@ -182,22 +181,36 @@ $(document).ready(function() {
         localStorage.setItem('favorites', JSON.stringify(favorites));
         console.log('Favorites updated:', favorites);
 
-        // Regenerate favorite products in the modal
+        // Update favorite modal
         generateFavoriteProducts();
     });
 
     // Handle add to cart button click
     $(document).on('click', '.btn-add-to-cart', function(e) {
         e.preventDefault();
-        var productElement = $(this).closest('.product-card');
-        var productName = productElement.find('.card-title').text();
+        var productName = $(this).data('product-name');
         var product = productsData.find(function(item) {
             return item.name === productName;
         });
 
         // Load cart items from local storage
         var cart = JSON.parse(localStorage.getItem('cart')) || [];
-        cart.push(product);
+        var cartItem = cart.find(function(item) {
+            return item.name === productName;
+        });
+
+        if (cartItem) {
+            // Increase quantity if already in cart
+            cartItem.quantity = cartItem.quantity + 1 || 2;
+        } else {
+            // Add new item to cart
+            cart.push({
+                name: product.name,
+                price: product.price,
+                image: product.image,
+                quantity: 1
+            });
+        }
 
         // Update local storage
         localStorage.setItem('cart', JSON.stringify(cart));
