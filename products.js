@@ -82,39 +82,39 @@ $(document).ready(function() {
         $('#favoriteModalBody').html(favoriteHtml);
     }
 
-// Function to update cart items display
-function updateCartDisplay() {
-    var cart = JSON.parse(localStorage.getItem('cart')) || [];
-    var cartHtml = '';
+    // Function to update cart items display
+    function updateCartDisplay() {
+        var cart = JSON.parse(localStorage.getItem('cart')) || [];
+        var cartHtml = '';
 
-    if (cart.length === 0) {
-        cartHtml = '<p>Your cart is currently empty.</p>';
-    } else {
-        cartHtml = '<div class="list-group">';
-        cart.forEach(function(item, index) {
-            cartHtml += '<div class="list-group-item">';
-            cartHtml += '<div class="row align-items-center">';
-            cartHtml += '<div class="col-2">';
-            cartHtml += '<img src="' + item.image + '" alt="' + item.name + '" class="img-fluid">';
+        if (cart.length === 0) {
+            cartHtml = '<p>Your cart is currently empty.</p>';
+        } else {
+            cartHtml = '<div class="list-group">';
+            cart.forEach(function(item, index) {
+                cartHtml += '<div class="list-group-item">';
+                cartHtml += '<div class="row align-items-center">';
+                cartHtml += '<div class="col-2">';
+                cartHtml += '<img src="' + item.image + '" alt="' + item.name + '" class="img-fluid">';
+                cartHtml += '</div>';
+                cartHtml += '<div class="col-5">';
+                cartHtml += '<h6 class="mb-0">' + item.name + '</h6>';
+                cartHtml += '<p class="mb-0">$' + item.price.toFixed(2) + '</p>';
+                cartHtml += '</div>';
+                cartHtml += '<div class="col-3 text-end">';
+                cartHtml += '<button class="btn btn-sm btn-danger btn-remove-from-cart" data-cart-index="' + index + '">&times;</button>';
+                cartHtml += '</div>';
+                cartHtml += '<div class="col-2">';
+                cartHtml += '<span class="badge bg-primary">' + item.quantity + '</span>';
+                cartHtml += '</div>';
+                cartHtml += '</div>';
+                cartHtml += '</div>';
+            });
             cartHtml += '</div>';
-            cartHtml += '<div class="col-5">';
-            cartHtml += '<h6 class="mb-0">' + item.name + '</h6>';
-            cartHtml += '<p class="mb-0">$' + item.price.toFixed(2) + '</p>';
-            cartHtml += '</div>';
-            cartHtml += '<div class="col-3 text-end">';
-            cartHtml += '<button class="btn btn-sm btn-danger btn-remove-from-cart" data-cart-index="' + index + '">&times;</button>';
-            cartHtml += '</div>';
-            cartHtml += '<div class="col-2">';
-            cartHtml += '<span class="badge bg-primary">' + item.quantity + '</span>';
-            cartHtml += '</div>';
-            cartHtml += '</div>';
-            cartHtml += '</div>';
-        });
-        cartHtml += '</div>';
+        }
+
+        $('#offcanvasCart .offcanvas-body').html(cartHtml);
     }
-
-    $('#offcanvasCart .offcanvas-body').html(cartHtml);
-}
 
     // Initial product data (generating 32 products with random values)
     for (var i = 1; i <= 32; i++) {
@@ -188,44 +188,54 @@ function updateCartDisplay() {
         generateFavoriteProducts();
     });
 
-// Handle add to cart button click
-$(document).on('click', '.btn-add-to-cart', function(e) {
-    e.preventDefault();
-    var productElement = $(this).closest('.product-card');
-    var productName = productElement.find('.card-title').text();
-    var product = productsData.find(function(item) {
-        return item.name === productName;
+    // Handle add to cart button click
+    $(document).on('click', '.btn-add-to-cart', function(e) {
+        e.preventDefault();
+        var productElement = $(this).closest('.product-card');
+        var productName = productElement.find('.card-title').text();
+        var product = productsData.find(function(item) {
+            return item.name === productName;
+        });
+
+        // Load cart items from local storage
+        var cart = JSON.parse(localStorage.getItem('cart')) || [];
+        var cartItem = cart.find(function(item) {
+            return item.name === productName;
+        });
+
+        if (cartItem) {
+            // Increment quantity if product is already in the cart
+            cartItem.quantity++;
+        } else {
+            // Add new item to cart
+            cart.push({
+                name: product.name,
+                price: product.price,
+                image: product.image,
+                quantity: 1
+            });
+        }
+
+        // Update local storage
+        localStorage.setItem('cart', JSON.stringify(cart));
+        console.log('Cart updated:', cart);
+
+        // Update add to cart button with quantity
+        var quantityInCart = cartItem ? cartItem.quantity : 1;
+        $(this).text('Add to Cart (' + quantityInCart + ')').removeClass('btn-primary').addClass('btn-success');
+
+        // Update cart display
+        updateCartDisplay();
     });
-
-    // Load cart items from local storage
-    var cart = JSON.parse(localStorage.getItem('cart')) || [];
-    var cartItem = cart.find(function(item) {
-        return item.name === productName;
-    });
-
-    if (cartItem) {
-        // Increment quantity if product already exists in cart
-        cartItem.quantity += 1;
-    } else {
-        // Add new item to cart with quantity 1
-        product.quantity = 1;
-        cart.push(product);
-    }
-
-    // Update local storage
-    localStorage.setItem('cart', JSON.stringify(cart));
-    console.log('Cart updated:', cart);
-
-    // Update cart display
-    updateCartDisplay();
-});
 
     // Handle remove from cart button click
-    $(document).on('click', '.btn-remove-from-cart', function(e) {
-        e.preventDefault();
-        var cartIndex = $(this).data('cart-index');
+    $(document).on('click', '.btn-remove-from-cart', function() {
+        var index = $(this).data('cart-index');
         var cart = JSON.parse(localStorage.getItem('cart')) || [];
-        cart.splice(cartIndex, 1);
+
+        if (index > -1) {
+            cart.splice(index, 1);
+        }
 
         // Update local storage
         localStorage.setItem('cart', JSON.stringify(cart));
@@ -235,57 +245,8 @@ $(document).on('click', '.btn-add-to-cart', function(e) {
         updateCartDisplay();
     });
 
-    // Filter by Price Range
-    $('#priceRange').on('input', function() {
-        var priceRangeValue = $(this).val();
-        $('#priceValue').text('$0 - $' + priceRangeValue);
-        filterProducts();
-    });
-
-    // Filter by Brand
-    $('#brandFilter').change(function() {
-        filterProducts();
-    });
-
-    // Filter by Type
-    $('.type-filter').change(function() {
-        filterProducts();
-    });
-
-    // Apply Filters Button Click
-    $('#applyFilterBtn').click(function() {
-        filterProducts();
-    });
-
-    // Function to filter products based on selected filters
-    function filterProducts() {
-        var filteredProducts = productsData.filter(function(product) {
-            var priceRangeValue = parseInt($('#priceRange').val());
-            var price = product.price;
-            var brandFilter = $('#brandFilter').val();
-            var typeFilters = $('.type-filter:checked').map(function() {
-                return $(this).val();
-            }).get();
-
-            // Apply filters
-            var priceCondition = price <= priceRangeValue;
-            var brandCondition = (brandFilter === 'all' || product.brand === brandFilter);
-            var typeCondition = (typeFilters.length === 0 || typeFilters.includes(product.type));
-
-            return priceCondition && brandCondition && typeCondition;
-        });
-
-        // Clear current products
-        $('#productsCarousel .carousel-item.active .row').empty();
-
-        // Generate filtered products
-        generateProducts(filteredProducts);
-    }
-
-    // Generate favorite products on modal show
-    $('#favoriteModal').on('show.bs.modal', function () {
-        generateFavoriteProducts();
-    });
+    // Generate favorite products on page load
+    generateFavoriteProducts();
 
     // Update cart display on page load
     updateCartDisplay();

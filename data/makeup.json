@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Lipstick",
+        "price": 15.99,
+        "brand": "Brand A",
+        "type": "Makeup",
+        "image": "https://via.placeholder.com/300"
+    },
+    {
+        "name": "Mascara",
+        "price": 12.99,
+        "brand": "Brand B",
+        "type": "Makeup",
+        "image": "https://via.placeholder.com/300"
+    }
+    
+]
