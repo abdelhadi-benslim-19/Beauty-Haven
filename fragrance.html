@@ -21,63 +21,366 @@
     </section>
     <!-- End Hero Section -->
 
-    <div class="container py-5">
+    <div class="container mt-4">
         <div class="row">
             <div class="col-md-3">
-                <!-- Filter Sidebar -->
-                <div class="filter-sidebar">
-                    <h4>Filter by:</h4>
-                    <!-- Price Range Filter -->
-                    <div class="mb-3">
-                        <label for="priceRange" class="form-label">Price Range</label>
-                        <input type="range" class="form-range" id="priceRange" min="0" max="100" value="100">
-                        <p id="priceValue">$0 - $100</p>
+                <!-- Filter Panel -->
+                <div class="card filter-panel">
+                    <div class="card-body">
+                        <h5 class="card-title">Product Filters</h5>
+                        <form id="filterForm">
+                            <!-- Makeup Type -->
+                            <div class="mb-3">
+                                <label class="form-label">Makeup Type</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="foundation" id="makeupType1">
+                                    <label class="form-check-label" for="makeupType1">
+                                        Foundation
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="lipstick" id="makeupType2">
+                                    <label class="form-check-label" for="makeupType2">
+                                        Lipstick
+                                    </label>
+                                </div>
+                                <!-- Add more makeup types as needed -->
+                            </div>
+    
+                            <!-- Pickup and Delivery -->
+                            <div class="mb-3">
+                                <label class="form-label">Pickup and Delivery</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="pickup" id="pickupDelivery1">
+                                    <label class="form-check-label" for="pickupDelivery1">
+                                        Pickup Available
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="delivery" id="pickupDelivery2">
+                                    <label class="form-check-label" for="pickupDelivery2">
+                                        Delivery Available
+                                    </label>
+                                </div>
+                            </div>
+    
+                            <!-- Color Family -->
+                            <div class="mb-3">
+                                <label for="colorFamily" class="form-label">Color Family</label>
+                                <select class="form-select" id="colorFamily">
+                                    <option value="">All Colors</option>
+                                    <option value="red">Red</option>
+                                    <option value="pink">Pink</option>
+                                    <option value="brown">Brown</option>
+                                    <!-- Add more color options as needed -->
+                                </select>
+                            </div>
+    
+                            <!-- Rating -->
+                            <div class="mb-3">
+                                <label for="ratingFilter" class="form-label">Rating</label>
+                                <select class="form-select" id="ratingFilter">
+                                    <option value="">Any Rating</option>
+                                    <option value="5">5 Stars</option>
+                                    <option value="4">4 Stars & Up</option>
+                                    <option value="3">3 Stars & Up</option>
+                                    <option value="2">2 Stars & Up</option>
+                                    <option value="1">1 Star & Up</option>
+                                </select>
+                            </div>
+    
+                            <!-- Brand -->
+                            <div class="mb-3">
+                                <label for="brandFilter" class="form-label">Brand</label>
+                                <select class="form-select" id="brandFilter">
+                                    <option value="">All Brands</option>
+                                    <option value="brand1">Brand 1</option>
+                                    <option value="brand2">Brand 2</option>
+                                    <option value="brand3">Brand 3</option>
+                                    <!-- Add more brand options as needed -->
+                                </select>
+                            </div>
+    
+                            <!-- Concerns -->
+                            <div class="mb-3">
+                                <label class="form-label">Concerns</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="anti-aging" id="concern1">
+                                    <label class="form-check-label" for="concern1">
+                                        Anti-Aging
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="acne" id="concern2">
+                                    <label class="form-check-label" for="concern2">
+                                        Acne
+                                    </label>
+                                </div>
+                                <!-- Add more concern options as needed -->
+                            </div>
+    
+                            <!-- Ingredient Preference -->
+                            <div class="mb-3">
+                                <label class="form-label">Ingredient Preference</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="organic" id="ingredient1">
+                                    <label class="form-check-label" for="ingredient1">
+                                        Organic
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="vegan" id="ingredient2">
+                                    <label class="form-check-label" for="ingredient2">
+                                        Vegan
+                                    </label>
+                                </div>
+                                <!-- Add more ingredient options as needed -->
+                            </div>
+    
+                            <!-- New -->
+                            <div class="mb-3">
+                                <label class="form-label">New</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="newArrival" id="newArrival">
+                                    <label class="form-check-label" for="newArrival">
+                                        New Arrival
+                                    </label>
+                                </div>
+                            </div>
+    
+                            <!-- Sale -->
+                            <div class="mb-3">
+                                <label class="form-label">Sale</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="onSale" id="onSale">
+                                    <label class="form-check-label" for="onSale">
+                                        On Sale
+                                    </label>
+                                </div>
+                            </div>
+    
+                            <!-- Shopping Preference -->
+                            <div class="mb-3">
+                                <label class="form-label">Shopping Preference</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="online" id="shoppingPref1">
+                                    <label class="form-check-label" for="shoppingPref1">
+                                        Online Shopping
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="inStore" id="shoppingPref2">
+                                    <label class="form-check-label" for="shoppingPref2">
+                                        In-Store Shopping
+                                    </label>
+                                </div>
+                            </div>
+    
+                            <!-- Finish -->
+                            <div class="mb-3">
+                                <label for="finish" class="form-label">Finish</label>
+                                <select class="form-select" id="finish">
+                                    <option value="">All Finishes</option>
+                                    <option value="matte">Matte</option>
+                                    <option value="shimmer">Shimmer</option>
+                                    <option value="glossy">Glossy</option>
+                                    <!-- Add more finish options as needed -->
+                                </select>
+                            </div>
+    
+                            <!-- Size -->
+                            <div class="mb-3">
+                                <label for="size" class="form-label">Size</label>
+                                <select class="form-select" id="size">
+                                    <option value="">All Sizes</option>
+                                    <option value="small">Small</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="large">Large</option>
+                                    <!-- Add more size options as needed -->
+                                </select>
+                            </div>
+    
+                            <!-- Coverage -->
+                            <div class="mb-3">
+                                <label for="coverage" class="form-label">Coverage</label>
+                                <select class="form-select" id="coverage">
+                                    <option value="">All Coverages</option>
+                                    <option value="light">Light</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="full">Full</option>
+                                    <!-- Add more coverage options as needed -->
+                                </select>
+                            </div>
+    
+                            <!-- Formulation -->
+                            <div class="mb-3">
+                                <label for="formulation" class="form-label">Formulation</label>
+                                <select class="form-select" id="formulation">
+                                    <option value="">All Formulations</option>
+                                    <option value="liquid">Liquid</option>
+                                    <option value="powder">Powder</option>
+                                    <option value="cream">Cream</option>
+                                    <!-- Add more formulation options as needed -->
+                                </select>
+                            </div>
+    
+                            <!-- Skin Type -->
+                            <div class="mb-3">
+                                <label class="form-label">Skin Type</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="normal" id="skinType1">
+                                    <label class="form-check-label" for="skinType1">
+                                        Normal
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="dry" id="skinType2">
+                                    <label class="form-check-label" for="skinType2">
+                                        Dry
+                                    </label>
+                                </div>
+                                <!-- Add more skin type options as needed -->
+                            </div>
+    
+                            <!-- Sun Protection -->
+                            <div class="mb-3">
+                                <label class="form-label">Sun Protection</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="spf15" id="sunProtection1">
+                                    <label class="form-check-label" for="sunProtection1">
+                                        SPF 15+
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="spf30" id="sunProtection2">
+                                    <label class="form-check-label" for="sunProtection2">
+                                        SPF 30+
+                                    </label>
+                                </div>
+                                <!-- Add more sun protection options as needed -->
+                            </div>
+    
+                            <!-- Benefits -->
+                            <div class="mb-3">
+                                <label class="form-label">Benefits</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="moisturizing" id="benefits1">
+                                    <label class="form-check-label" for="benefits1">
+                                        Moisturizing
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="anti-oxidant" id="benefits2">
+                                    <label class="form-check-label" for="benefits2">
+                                        Anti-Oxidant
+                                    </label>
+                                </div>
+                                <!-- Add more benefits options as needed -->
+                            </div>
+    
+                            <!-- Age Range -->
+                            <div class="mb-3">
+                                <label for="ageRange" class="form-label">Age Range</label>
+                                <select class="form-select" id="ageRange">
+                                    <option value="">All Ages</option>
+                                    <option value="teen">Teen</option>
+                                    <option value="adult">Adult</option>
+                                    <option value="senior">Senior</option>
+                                    <!-- Add more age range options as needed -->
+                                </select>
+                            </div>
+    
+                            <!-- Price Range -->
+                            <div class="mb-3">
+                                <label for="priceRange" class="form-label">Price Range</label>
+                                <input type="range" class="form-range" min="0" max="100" step="10" id="priceRange">
+                                <span id="priceRangeValue">0 - 100</span>
+                            </div>
+    
+                            <!-- Volume -->
+                            <div class="mb-3">
+                                <label for="volume" class="form-label">Volume</label>
+                                <select class="form-select" id="volume">
+                                    <option value="">All Volumes</option>
+                                    <option value="small">Small</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="large">Large</option>
+                                    <!-- Add more volume options as needed -->
+                                </select>
+                            </div>
+    
+                            <!-- Hair Texture -->
+                            <div class="mb-3">
+                                <label for="hairTexture" class="form-label">Hair Texture</label>
+                                <select class="form-select" id="hairTexture">
+                                    <option value="">All Textures</option>
+                                    <option value="straight">Straight</option>
+                                    <option value="wavy">Wavy</option>
+                                    <option value="curly">Curly</option>
+                                    <!-- Add more hair texture options as needed -->
+                                </select>
+                            </div>
+    
+                            <!-- Hair Type -->
+                            <div class="mb-3">
+                                <label class="form-label">Hair Type</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="normal" id="hairType1">
+                                    <label class="form-check-label" for="hairType1">
+                                        Normal
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="dry" id="hairType2">
+                                    <label class="form-check-label" for="hairType2">
+                                        Dry
+                                    </label>
+                                </div>
+                                <!-- Add more hair type options as needed -->
+                            </div>
+    
+                            <!-- Type -->
+                            <div class="mb-3">
+                                <label for="type" class="form-label">Type</label>
+                                <select class="form-select" id="type">
+                                    <option value="">All Types</option>
+                                    <option value="brush">Brush</option>
+                                    <option value="sponge">Sponge</option>
+                                    <option value="pencil">Pencil</option>
+                                    <!-- Add more type options as needed -->
+                                </select>
+                            </div>
+    
+                            <!-- Bristle Type -->
+                            <div class="mb-3">
+                                <label for="bristleType" class="form-label">Bristle Type</label>
+                                <select class="form-select" id="bristleType">
+                                    <option value="">All Bristle Types</option>
+                                    <option value="synthetic">Synthetic</option>
+                                    <option value="natural">Natural</option>
+                                    <!-- Add more bristle type options as needed -->
+                                </select>
+                            </div>
+    
+                            <!-- Apply Filter Button -->
+                            <button type="submit" class="btn btn-primary">Apply Filters</button>
+                            <button type="reset" class="btn btn-secondary ms-2">Reset Filters</button>
+                        </form>
                     </div>
-
-                    <!-- Brand Filter -->
-                    <div class="mb-3">
-                        <label for="brandFilter" class="form-label">Brand</label>
-                        <select class="form-select" id="brandFilter">
-                            <option value="all">All Brands</option>
-                            <option value="Brand 1">Brand 1</option>
-                            <option value="Brand 2">Brand 2</option>
-                            <option value="Brand 3">Brand 3</option>
-                        </select>
-                    </div>
-
-                    <!-- Type Filter -->
-                    <div class="mb-3">
-                        <label class="form-label">Type</label>
-                        <div class="form-check">
-                            <input class="form-check-input type-filter" type="checkbox" value="Type 1" id="type1">
-                            <label class="form-check-label" for="type1">Type 1</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input type-filter" type="checkbox" value="Type 2" id="type2">
-                            <label class="form-check-label" for="type2">Type 2</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input type-filter" type="checkbox" value="Type 3" id="type3">
-                            <label class="form-check-label" for="type3">Type 3</label>
-                        </div>
-                    </div>
-
-                    <!-- Apply Filters Button -->
-                    <button class="btn btn-primary" id="applyFilterBtn">Apply Filters</button>
                 </div>
             </div>
-
+    
             <div class="col-md-9">
                 <div id="productsCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
-                        <!-- Fragrance Product Cards -->
+                        <!-- Skincare Product Cards -->
                         <div class="carousel-item active">
                             <div class="row">
-                                <!-- Generated Fragrance Products -->
+                                <!-- Generated Skincare Products -->
                                 <!-- Insert generated products here -->
                             </div>
                         </div>
-                        <!-- End Fragrance Product Cards -->
+                        <!-- End Skincare Product Cards -->
                     </div>
                 </div>
             </div>
