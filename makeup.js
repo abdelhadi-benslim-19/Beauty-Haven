@@ -1,5 +1,25 @@
 $(document).ready(function() {
-    var productsData = []; // Replace with your actual product data array
+    var productsData = []; // Array to store loaded product data
+
+    // Function to load products from JSON file based on category
+    function loadProducts(category) {
+        return new Promise(function(resolve, reject) {
+            $.getJSON(category + '.json', function(products) {
+                productsData = products; // Store loaded products in the global array
+                resolve(products);
+            }).fail(function(jqXHR, textStatus, errorThrown) {
+                reject(errorThrown);
+            });
+        });
+    }
+
+    // Load products on page load
+    loadProducts('makeup').then(function(products) {
+        console.log('Products loaded:', products); // Check if products are loaded correctly
+        generateProducts(products); // Generate product cards
+    }).catch(function(error) {
+        console.error('Error loading products:', error);
+    });
 
     // Function to generate product cards
     function generateProducts(products) {
@@ -116,20 +136,6 @@ $(document).ready(function() {
         $('#offcanvasCart .offcanvas-body').html(cartHtml);
     }
 
-    // Initial product data (generating 32 products with random values)
-    for (var i = 1; i <= 32; i++) {
-        productsData.push({
-            name: 'Product ' + i,
-            price: (Math.floor(Math.random() * 100) + 10),
-            brand: 'Brand ' + (Math.floor(Math.random() * 3) + 1), // Random brand from 1 to 3
-            type: 'Type ' + (Math.floor(Math.random() * 3) + 1), // Random type from 1 to 3
-            image: 'https://via.placeholder.com/300'
-        });
-    }
-
-    // Generate initial product cards
-    generateProducts(productsData);
-
     // Show view details button on hover
     $(document).on('mouseenter', '.product-card', function() {
         $(this).find('.btn-view-details').removeClass('d-none');
@@ -200,14 +206,14 @@ $(document).ready(function() {
         // Load cart items from local storage
         var cart = JSON.parse(localStorage.getItem('cart')) || [];
         var cartItem = cart.find(function(item) {
-            return item.name === productName;
+            return item.name === product.name;
         });
 
         if (cartItem) {
-            // Increment quantity if product is already in the cart
+            // Increment quantity if the product is already in the cart
             cartItem.quantity++;
         } else {
-            // Add new item to cart
+            // Add new product to the cart
             cart.push({
                 name: product.name,
                 price: product.price,
@@ -220,21 +226,23 @@ $(document).ready(function() {
         localStorage.setItem('cart', JSON.stringify(cart));
         console.log('Cart updated:', cart);
 
-        // Update add to cart button with quantity
-        var quantityInCart = cartItem ? cartItem.quantity : 1;
-        $(this).text('Add to Cart (' + quantityInCart + ')').removeClass('btn-primary').addClass('btn-success');
+        // Update add to cart button text
+        $(this).text('Add to Cart (' + cartItem.quantity + ')').removeClass('btn-primary').addClass('btn-success');
 
         // Update cart display
         updateCartDisplay();
     });
 
     // Handle remove from cart button click
-    $(document).on('click', '.btn-remove-from-cart', function() {
-        var index = $(this).data('cart-index');
+    $(document).on('click', '.btn-remove-from-cart', function(e) {
+        e.preventDefault();
+        var cartIndex = $(this).data('cart-index');
+
+        // Load cart items from local storage
         var cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-        if (index > -1) {
-            cart.splice(index, 1);
+        if (cartIndex > -1 && cartIndex < cart.length) {
+            cart.splice(cartIndex, 1);
         }
 
         // Update local storage
@@ -245,9 +253,13 @@ $(document).ready(function() {
         updateCartDisplay();
     });
 
-    // Generate favorite products on page load
-    generateFavoriteProducts();
+    // Generate favorite products when modal is opened
+    $('#favoriteModal').on('show.bs.modal', function() {
+        generateFavoriteProducts();
+    });
 
-    // Update cart display on page load
-    updateCartDisplay();
+    // Update cart display on offcanvas cart show
+    $('#offcanvasCart').on('show.bs.offcanvas', function() {
+        updateCartDisplay();
+    });
 });

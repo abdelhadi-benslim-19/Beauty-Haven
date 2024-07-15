@@ -1,0 +1,66 @@
+[
+    {
+        "name": "Ameerat Al Arab",
+        "price": 23.00,
+        "brand": "Asdaaf",
+        "type": "fragrance",
+        "image": "https://m.media-amazon.com/images/I/6196rQ4LUNL._AC_SY355_.jpg"
+    },
+    {
+        "name": "Mini Black Opium & Libre Eau de Parfum Set",
+        "price": 35.00,
+        "brand": "Yves Saint Laurent",
+        "type": "fragrance",
+        "image": "https://www.sephora.com/productimages/sku/s2561835-main-zoom.jpg?imwidth=300"
+    },
+    {
+        "name": "Donna Born In Roma Eau de Parfum",
+        "price": 135.00,
+        "brand": "Valentino",
+        "type": "fragrance",
+        "image": "https://www.sephora.com/productimages/sku/s2249688-main-zoom.jpg?imwidth=300"
+    },
+    {
+        "name": "VANILLA CANDY ROCK SUGAR | 42 Eau de Parfum",
+        "price": 135.00,
+        "brand": "KAYALI",
+        "type": "fragrance",
+        "image": "https://www.sephora.com/productimages/sku/s2752657-main-zoom.jpg?imwidth=300"
+    },
+    {
+        "name": "Sauvage Eau de Parfum",
+        "price": 120.00,
+        "brand": "Dior",
+        "type": "fragrance",
+        "image": "https://www.sephora.com/productimages/sku/s2038123-main-zoom.jpg?imwidth=300"
+    },
+    {
+        "name": "COCO MADEMOISELLE Eau de Parfum",
+        "price": 138.00,
+        "brand": "CHANEL",
+        "type": "fragrance",
+        "image": "https://www.sephora.com/productimages/sku/s513168-main-zoom.jpg?imwidth=300"
+    },
+    {
+        "name": "Lychee Rose Eau de Parfum",
+        "price": 92.00,
+        "brand": "NEST New York",
+        "type": "fragrance",
+        "image": "https://www.sephora.com/productimages/sku/s2693836-main-zoom.jpg?imwidth=300"
+    },
+    {
+        "name": "Light Blue Pour Homme Eau de Toilette Spray",
+        "price": 107.00,
+        "brand": "Dolce&Gabbana",
+        "type": "fragrance",
+        "image": "https://www.sephora.com/productimages/sku/s1019991-main-zoom.jpg?imwidth=300"
+    },
+    {
+        "name": "Jasmin Rouge Eau de Parfum Fragrance",
+        "price": 300.00,
+        "brand": "TOM FORD",
+        "type": "fragrance",
+        "image": "https://www.sephora.com/productimages/sku/s1449115-main-zoom.jpg?imwidth=300"
+    }
+
+]

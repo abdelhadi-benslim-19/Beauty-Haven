@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Mini Honey Infused Hair Oil",
+        "price": 25.00,
+        "brand": "Gisou",
+        "type": "hair",
+        "image": "https://www.sephora.com/productimages/sku/s2380285-main-zoom.jpg?pb=allure-2023-bestofbeauty-badge&imwidth=300"
+    },
+    {
+        "name": "Soulfood Nourishing Hair Mask",
+        "price": 34.00,
+        "brand": "amika",
+        "type": "hair",
+        "image": "https://www.sephora.com/productimages/sku/s2758142-main-zoom.jpg?pb=clean-planet-aware&imwidth=300"
+    },
+    {
+        "name": "Shark FlexStyle™ Hair Blow Dryer & Multi-Styler for Straight & Wavy Hair",
+        "price": 299.00,
+        "brand": "Shark Beauty",
+        "type": "hair",
+        "image": "https://www.sephora.com/productimages/sku/s2687010-main-zoom.jpg?pb=allure-2023-bestofbeauty-badge&imwidth=300"
+    },
+    {
+        "name": "DAMAGE SHIELD pH Protective Shampoo",
+        "price": 36.00,
+        "brand": "K18 Biomimetic Hairscience",
+        "type": "hair",
+        "image": "https://www.sephora.com/productimages/sku/s2731867-main-zoom.jpg?pb=clean-at-sephora&imwidth=300"
+    },
+    {
+        "name": "Hydration Hair Set",
+        "price": 52.00,
+        "brand": "Moroccanoil",
+        "type": "hair",
+        "image": "https://www.sephora.com/productimages/sku/s2771905-main-zoom.jpg?imwidth=300"
+    },
+    {
+        "name": "Supershine Moisturizing Hair Cream",
+        "price": 54.00,
+        "brand": "Oribe",
+        "type": "hair",
+        "image": "https://www.sephora.com/productimages/sku/s2438687-main-zoom.jpg?imwidth=300"
+    },
+    {
+        "name": "HoliRoots™ Hydrating Conditioner",
+        "price": 30.00,
+        "brand": "Fable & Mane",
+        "type": "hair",
+        "image": "https://www.sephora.com/productimages/sku/s2350999-main-zoom.jpg?pb=clean-at-sephora&imwidth=300"
+    },
+    {
+        "name": "Mini Multi Peptide Hair Density Serum",
+        "price": 15.00,
+        "brand": "The Ordinary",
+        "type": "hair",
+        "image": "https://www.sephora.com/productimages/sku/s2616878-main-zoom.jpg?imwidth=300"
+    },
+    {
+        "name": "Genesis Strengthening Shampoo for Normal to Dry Hair",
+        "price": 42.00,
+        "brand": "Kérastase",
+        "type": "hair",
+        "image": "https://www.sephora.com/productimages/sku/s2325116-main-zoom.jpg?imwidth=300"
+    }
+]

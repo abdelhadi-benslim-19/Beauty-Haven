@@ -1,0 +1,65 @@
+[
+    {
+        "name": "B-Hydra™ Intensive Hydration Serum with Hyaluronic Acid",
+        "price": 49.00,
+        "brand": "Drunk Elephant",
+        "type": "Skincare",
+        "image": "https://www.sephora.com/productimages/sku/s1785856-main-zoom.jpg?pb=clean-at-sephora&imwidth=300"
+    },
+    {
+        "name": "SOS Daily Rescue Facial Spray with Hypochlorous Acid",
+        "price": 28.00,
+        "brand": "Tower 28 Beauty",
+        "type": "Skincare",
+        "image": "https://www.sephora.com/productimages/sku/s2527844-main-zoom.jpg?pb=clean-at-sephora&imwidth=300"
+    },
+    {
+        "name": "All Day Glow SPF Set",
+        "price": 44.00,
+        "brand": "Supergoop!",
+        "type": "Skincare",
+        "image": "https://www.sephora.com/productimages/sku/s2734853-main-zoom.jpg?imwidth=300"
+    },
+    {
+        "name": "Vitamin Eye Masks",
+        "price": 4.00,
+        "brand": "SEPHORA COLLECTION",
+        "type": "Skincare",
+        "image": "https://www.sephora.com/productimages/sku/s2495539-main-zoom.jpg?pb=clean-at-sephora&imwidth=300"
+    },
+    {
+        "name": "Lip Sleeping Mask Intense Hydration with Vitamin C",
+        "price": 24.00,
+        "brand": "LANEIGE",
+        "type": "Skincare",
+        "image": "https://www.sephora.com/productimages/sku/s2273639-main-zoom.jpg?imwidth=300"
+    },
+    {
+        "name": "Glowmotions Glow Body Oil",
+        "price": 35.00,
+        "brand": "Sol de Janeiro",
+        "type": "Skincare",
+        "image": "https://www.sephora.com/productimages/sku/s2205359-main-zoom.jpg?pb=2020-03-allure-best-2019&imwidth=300"
+    },
+    {
+        "name": "Mini Rose Quartz Facial Roller",
+        "price": 6.00,
+        "brand": "SEPHORA COLLECTION",
+        "type": "Skincare",
+        "image": "https://www.sephora.com/productimages/sku/s2600021-main-zoom.jpg?pb=2023-03-sephora-value-2023&imwidth=300"
+    },
+    {
+        "name": "Ultra Facial Refillable Moisturizing Cream with Squalane",
+        "price": 39.00,
+        "brand": "Kiehl's Since 1851",
+        "type": "Skincare",
+        "image": "https://www.sephora.com/productimages/sku/s2663763-main-zoom.jpg?imwidth=300"
+    },
+    {
+        "name": "DreamBeam Silicone-Free Mineral Sunscreen SPF 40 with Ceramides and Peptides",
+        "price": 40.00,
+        "brand": "Kosas",
+        "type": "Skincare",
+        "image": "https://www.sephora.com/productimages/sku/s2761633-main-zoom.jpg?pb=clean-at-sephora&imwidth=300"
+    }
+]

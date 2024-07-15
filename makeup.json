@@ -1,0 +1,66 @@
+[
+    {
+        "name": "Dew Blush Blendable Liquid Blush",
+        "price": 25.00,
+        "brand": "Saie",
+        "type": "Makeup",
+        "image": "https://www.sephora.com/productimages/sku/s2437788-main-zoom.jpg?pb=clean-planet-aware&imwidth=300"
+    },
+    {
+        "name": "Lip Butter Balm for Hydration & Shine",
+        "price": 24.00,
+        "brand": "Summer Fridays",
+        "type": "Makeup",
+        "image": "https://www.sephora.com/productimages/sku/s2495497-main-zoom.jpg?pb=allure-2023-bestofbeauty-badge&imwidth=300"
+    },
+    {
+        "name": "Super Serum Skin Tint SPF 40 Skincare Foundation",
+        "price": 48.00,
+        "brand": "ILIA",
+        "type": "Makeup",
+        "image": "https://www.sephora.com/productimages/sku/s2333607-main-zoom.jpg?pb=allure-best-2020&imwidth=300"
+    },
+    {
+        "name": "Easy Bake Loose Baking & Setting Powder",
+        "price": 38.00,
+        "brand": "HUDA BEAUTY",
+        "type": "Makeup",
+        "image": "https://www.sephora.com/productimages/sku/s2739415-main-zoom.jpg?imwidth=300"
+    },
+    {
+        "name": "Mini On 'Til Dawn Mattifying Waterproof Setting Spray",
+        "price": 17.00,
+        "brand": "ONE/SIZE by Patrick Starrr",
+        "type": "Makeup",
+        "image": "https://www.sephora.com/productimages/sku/s2490704-main-zoom.jpg?imwidth=300"
+    },
+    {
+        "name": "Radiant Creamy Concealer",
+        "price": 32.00,
+        "brand": "NARS",
+        "type": "Makeup",
+        "image": "https://www.sephora.com/productimages/sku/s2172310-main-zoom.jpg?imwidth=300"
+    },
+    {
+        "name": "Mini Positive Light Liquid Luminizer",
+        "price": 16.00,
+        "brand": "Rare Beauty by Selena Gomez",
+        "type": "Makeup",
+        "image": "https://www.sephora.com/productimages/sku/s2762003-main-zoom.jpg?imwidth=300"
+    },
+    {
+        "name": "YSL Loveshine Lip Oil Stick",
+        "price": 45.00,
+        "brand": "Yves Saint Laurent",
+        "type": "Makeup",
+        "image": "https://www.sephora.com/productimages/sku/s2751394-main-zoom.jpg?imwidth=300"
+    },
+    {
+        "name": "Waterproof 12HR Retractable Eyeliner Pencil",
+        "price": 14.00,
+        "brand": "SEPHORA COLLECTION",
+        "type": "Makeup",
+        "image": "https://www.sephora.com/productimages/sku/s2616928-main-zoom.jpg?pb=2023-03-sephora-value-2023&imwidth=300"
+    }
+    
+]
