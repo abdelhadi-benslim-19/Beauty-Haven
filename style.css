@@ -160,16 +160,10 @@ body {
 }
 
 .product-card img {
-    height: 200px; /* Adjust as needed */
-    object-fit: cover;
-    transition: transform 0.3s ease; /* Smooth zoom effect */
-    transform: scale(0.9); /* Zoom out effect */
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
-
-.product-card img:hover {
-    transform: scale(1); /* Zoom to original size on hover */
-}
-
 
 .card-body {
     flex-grow: 1;
