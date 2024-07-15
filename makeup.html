@@ -24,8 +24,12 @@
     <div class="container mt-4">
         <div class="row">
             <div class="col-md-3">
+                <!-- Filter Button for Mobile -->
+            <button class="btn btn-primary d-md-none mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#filterPanel" aria-expanded="false" aria-controls="filterPanel">
+                <i class="fas fa-sliders-h"></i>
+            </button>
                 <!-- Filter Panel -->
-                <div class="card filter-panel">
+                <div class="card filter-panel collapse d-md-block" id="filterPanel">
                     <div class="card-body">
                         <h5 class="card-title">Product Filters</h5>
                         <form id="filterForm">
@@ -367,6 +371,10 @@
                             <button type="reset" class="btn btn-secondary ms-2">Reset Filters</button>
                         </form>
                     </div>
+                        <!-- Close Button for Mobile -->
+                <button class="btn btn-secondary d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#filterPanel" aria-expanded="false" aria-controls="filterPanel">
+                    Close
+                </button>
                 </div>
             </div>
     
