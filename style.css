@@ -161,8 +161,14 @@ body {
 
 .product-card img {
     width: 100%;
-    height: auto;
+    height: auto; /* Adjust as needed */
     object-fit: contain;
+    transition: transform 0.3s ease; /* Smooth zoom effect */
+    transform: scale(0.9); /* Zoom out effect */
+}
+
+.product-card img:hover {
+    transform: scale(1); /* Zoom to original size on hover */
 }
 
 .card-body {
