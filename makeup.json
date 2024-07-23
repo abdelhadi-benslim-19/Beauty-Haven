@@ -61,6 +61,13 @@
         "brand": "SEPHORA COLLECTION",
         "type": "Makeup",
         "image": "https://www.sephora.com/productimages/sku/s2616928-main-zoom.jpg?pb=2023-03-sephora-value-2023&imwidth=300"
+    },
+    {
+        "name": "Kybrow Kit",
+        "price": 33.95,
+        "brand": "KYLIE COSMETICS",
+        "type": "Makeup",
+        "image": "https://kyliecosmetics.com/cdn/shop/products/fld46ij6gz4n7sbn2c1z_400x.jpg?v=1671539109"
     }
     
 ]
